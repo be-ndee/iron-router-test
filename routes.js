@@ -19,3 +19,16 @@ Router.route('/about', {
 Router.route('/imprint', {
     name: 'imprint'
 });
+
+Router.route('/items/:_id', function () {
+    var names = ['foo', 'bar', 'bla', 'blubb'];
+    var name = 'default';
+    if (0 <= this.params._id && this.params._id < names.length) {
+        name = names[this.params._id];
+    }
+    this.render('items', {
+        data: {
+            name: name
+        }
+    });
+});
