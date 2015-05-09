@@ -4,10 +4,18 @@ Router.configure({
     loadingTemplate: 'loading'
 });
 
-Router.map(function () {
-    this.route('home', {
-        path: '/'
-    });
-    this.route('about');
-    this.route('imprint');
+Router.route('/', {
+    name: 'home'
+});
+
+Router.route('/about', {
+    name: 'about',
+    data: {
+        name: 'Andreas Bissinger',
+        year: 2015
+    }
+});
+
+Router.route('/imprint', {
+    name: 'imprint'
 });
